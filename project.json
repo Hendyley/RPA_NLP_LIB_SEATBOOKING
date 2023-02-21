@@ -1,7 +1,7 @@
 {
   "name": "RPA_Hackaton",
   "description": "RPA Hackaton",
-  "main": "Main.xaml",
+  "main": "Main_Test.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.DataService.Activities": "[22.12.2-preview]",
@@ -49,8 +49,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "f1e0f32e-6467-4cb8-9370-f341527d037b",
+      "filePath": "Main_Test.xaml",
+      "uniqueId": "cdf57ce7-6ca3-4e2a-9d48-2c75f4feb489",
       "input": [],
       "output": []
     }
