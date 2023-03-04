@@ -1,11 +1,12 @@
 {
   "name": "RPA_Hackaton",
   "description": "RPA Hackaton",
-  "main": "Main_Test.xaml",
+  "main": "Final_Flowchart.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.7.1]",
-    "UiPath.DataService.Activities": "[22.12.2-preview]",
+    "UiPath.DataService.Activities": "[21.10.1]",
     "UiPath.Excel.Activities": "[2.17.0-preview]",
+    "UiPath.Form.Activities": "[23.2.0-beta.3580795]",
     "UiPath.Mail.Activities": "[1.18.2]",
     "UiPath.Python.Activities": "[1.6.0]",
     "UiPath.System.Activities": "[22.10.4]",
@@ -14,10 +15,17 @@
     "UiPath.WebAPI.Activities": "[1.13.3]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "DefaultTenant",
+      "namespace": "RPA_Hackaton",
+      "uniqueReference": "Zxo9GJ3YYJB/iVwUSOnVssEzHGImh8tNdSm9U3S43yA="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "22.12.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.5",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -25,6 +33,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -51,8 +60,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main_Test.xaml",
-      "uniqueId": "cdf57ce7-6ca3-4e2a-9d48-2c75f4feb489",
+      "filePath": "Final_Flowchart.xaml",
+      "uniqueId": "566c4cd3-953c-4c99-a5a6-0f4f89678647",
       "input": [],
       "output": []
     }
