@@ -147,7 +147,7 @@
               <OutArgument x:TypeArguments="x:String">[Date_]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[Today.Date.ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">Today</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -155,7 +155,7 @@
               <OutArgument x:TypeArguments="x:String">[Start_time]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">Today</InArgument>
+              <InArgument x:TypeArguments="x:String">5:45 pm</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -163,7 +163,7 @@
               <OutArgument x:TypeArguments="x:String">[Duration]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">1.30</InArgument>
+              <InArgument x:TypeArguments="x:String">1:30</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">

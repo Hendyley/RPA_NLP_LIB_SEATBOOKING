@@ -97,7 +97,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Innerloop_Flowchart__Appointment_Booking_" sap:VirtualizedContainerService.HintSize="648,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Innerloop_Flowchart__Appointment_Booking_" sap:VirtualizedContainerService.HintSize="1003.2,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:List(x:Object)" Name="LIST_LIB" />
       <Variable x:TypeArguments="x:Boolean" Name="S_TABLE" />
@@ -116,10 +116,10 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Point x:Key="ShapeLocation">510,2.3999999999999986</av:Point>
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,133.6</av:PointCollection>
-        <x:Double x:Key="Width">614.4</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">540,77.6 540,133.6</av:PointCollection>
+        <x:Double x:Key="Width">970</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -128,9 +128,9 @@
     <FlowStep x:Name="__ReferenceID3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,133.6</av:Point>
+          <av:Point x:Key="ShapeLocation">440,133.6</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">200,160 100,160 100,196.4</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">440,160 340,160 340,196.4</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init Data collection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Init Data collection.xaml">
@@ -156,18 +156,18 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:Point x:Key="ShapeLocation">60.400000000000006,196.4</av:Point>
+              <av:Point x:Key="ShapeLocation">300.4,196.4</av:Point>
               <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-              <av:PointCollection x:Key="FalseConnector">139.60000000000002,240 300,240 300,253.60000000000002</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">379.59999999999997,240 550,240 550,253.60000000000002</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID2">
+            <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,253.60000000000002</av:Point>
+                  <av:Point x:Key="ShapeLocation">450,253.60000000000002</av:Point>
                   <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">400,280 430,280 430,378.4</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">550,306.40000000000003 550,363.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Preparation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Data Preparation.xaml">
@@ -219,22 +219,46 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID1">
+                <FlowStep x:Name="__ReferenceID2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">330,378.4</av:Point>
-                      <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+                      <av:Point x:Key="ShapeLocation">450,363.6</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Check output" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Appoinment_Booking.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Appoinment_Booking.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="LibList">
+                        <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="LibList" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="scg:List(x:Object)" x:Key="LIST_LIB">
+                        <VisualBasicReference x:TypeArguments="scg:List(x:Object)" ExpressionText="LIST_LIB" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="S_TABLE">
+                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="S_TABLE" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="Start_time">
+                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Start_time" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="Duration">
+                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Duration" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="Date_">
+                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Date_" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="Total">
+                        <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="Total" />
+                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">
+                        <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SEAT_TO_ORDER" />
+                      </InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:OutputDataTable DataTable="[LibList]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[LIBDATA_T]" />
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[LIBDATA_T +Environment.NewLine]" />
-                  </Sequence>
+                  </ui:InvokeWorkflowFile>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
@@ -246,7 +270,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">380,33.519999999999996</av:Point>
+          <av:Point x:Key="ShapeLocation">770,33.519999999999996</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -275,15 +299,31 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
     </FlowStep>
-    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">760,348.4</av:Point>
+          <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Check output" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:OutputDataTable DataTable="[LibList]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="387.2,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[LIBDATA_T]" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[LIBDATA_T +Environment.NewLine]" />
+      </Sequence>
+    </FlowStep>
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">0,5.599999999999994</av:Point>
-          <av:Size x:Key="ShapeSize">200,228.8</av:Size>
+          <av:Size x:Key="ShapeSize">200,267.2</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:Comment sap:VirtualizedContainerService.HintSize="200,228.8" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Var:&#xA;-LIBDATA -&gt; DB ALL Library info&#xA;-LibList    -&gt; Selective Library info&#xA;-LIST_LIB  -&gt; Seach Lib List&lt;object&gt;&#xA;&#xA;&#xA;&#xA;&#xA;https://forum.uipath.com/t/distinct-values-in-a-datatable/2855/4&#xA;&#xA;">
+      <ui:Comment sap:VirtualizedContainerService.HintSize="200,267.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Var:&#xA;-LIBDATA -&gt; DB ALL Library info&#xA;-LibList    -&gt; Selective Library info (Library, Area, Lib_seats, Area_Seats)&#xA;-LIST_LIB  -&gt; Seach Lib List&lt;object&gt; (string)&#xA;&#xA;&#xA;&#xA;&#xA;https://forum.uipath.com/t/distinct-values-in-a-datatable/2855/4&#xA;&#xA;">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -291,6 +331,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:Comment>
     </FlowStep>
+    <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
   </Flowchart>
 </Activity>
