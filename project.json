@@ -1,7 +1,7 @@
 {
   "name": "RPA_Hackaton",
   "description": "RPA Hackaton",
-  "main": "Final_Flowchart.xaml",
+  "main": "Innerloop Flowchart (Appointment Booking).xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.DataService.Activities": "[21.10.1]",
@@ -60,8 +60,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Final_Flowchart.xaml",
-      "uniqueId": "566c4cd3-953c-4c99-a5a6-0f4f89678647",
+      "filePath": "Innerloop Flowchart (Appointment Booking).xaml",
+      "uniqueId": "aa18fbf2-b800-4cc9-8abe-691b932a688d",
       "input": [],
       "output": []
     }
