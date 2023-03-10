@@ -164,11 +164,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">260,233.6</av:Point>
-          <av:Size x:Key="ShapeSize">237.6,52.8</av:Size>
+          <av:Size x:Key="ShapeSize">213.6,52.8</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">366.8,286.4 360,286.4 360,316.4</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Main page attr  Use Browser Chrome: Seat Booking" sap:VirtualizedContainerService.HintSize="237.6,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="7cc2c3a3-8d46-4f49-9960-1a4fd8032998" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Main page attr  Use Browser Chrome: Seat Booking" sap:VirtualizedContainerService.HintSize="213.6,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="7cc2c3a3-8d46-4f49-9960-1a4fd8032998" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -344,11 +344,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">260,316.4</av:Point>
-              <av:Size x:Key="ShapeSize">216.8,83.2</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">360,399.59999999999997 360,429.59999999999997 360.4,429.59999999999997 360.4,463.6</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">360,399.59999999999997 360,429.59999999999997 361.6,429.59999999999997 361.6,463.6</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Per Area Find Seats" sap:VirtualizedContainerService.HintSize="216.8,83.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Per Area Find Seats" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -495,11 +495,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">250,463.6</av:Point>
-                  <av:Size x:Key="ShapeSize">220.8,52.8</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">470.8,490 500.8,490 500.8,436.4 570.1999999999999,436.4 570.1999999999999,466.4</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">223.2,52.8</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">473.2,490 503.2,490 503.2,436.4 570.1999999999999,436.4 570.1999999999999,466.4</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check available seats (found = false)" sap:VirtualizedContainerService.HintSize="220.8,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check available seats (found = false)" sap:VirtualizedContainerService.HintSize="761.6,3066.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -665,14 +665,17 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Book Seat" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                            <Sequence DisplayName="Book Seat" sap:VirtualizedContainerService.HintSize="668.8,2220" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:Int32" Name="user" />
+                              </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_28" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
+                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="606.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_28" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails?reload=true" DesignTimeRectangle="1000, 632, 894, 23" DesignTimeScaleFactor="1.25" FriendlyName="'Book'" FullSelectorArgument="&lt;webctrl aaname='Book ' parentid='app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Book ' parentid='app' tag='SPAN' type='' class='v-btn__content' check:innerText='BOOK' /&gt;" Guid="5481c503-4792-4388-a1e8-fc40307d4f5c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA4IAAAAbCAYAAAApiDF3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARvSURBVHhe7d1Pa5RHHAdw34ovoW8hR1+C1x579C306LGHHnotOeUiLQFRe7MgKBWpJAdFKkERJVJSQsKG6W82z6yzm9lNYuaJh/0MfGB3/u0kty/zzDw30s83EgAAAOtDEAQAAFgzgiAA49i6ldKj2yndu9lun4q2+9HnUfRttgMAYxAEARjHzss0LXt32u1T0XaUO0XfZjsAMAZBEIC+NjdOdwJfvZ7mwPT+7un3pmibBsHom7/fj7GtOQGArgRBAPrZvJPS4TT+fX1ZuYMIAPQgCALQz8vhcdArFY+JAsDYBEEA+innAq9UBEEAGJsgCEA/3zwIlstnGuXoXUq7PzTGDLai7UP0mQz9czl4ltKTVTea3kzp+e8pHVbPw072U9r7KaXNVv9qfTsLbdu/fPnt/fhctwFAZ4IgAP2UIHgcgepTfL6UGDMt8bk194VUQWsS4ex4cDLU5fK2cQaxDmG55LGzMfH5TevcYoTAt2XNUU6iXz3HUYTI7cUxS4Jgfbby8OGSEAkA/QiCAPRTguBX7WjFmGnpFATndtwitO3tn9YfP67qs1sp/XvalA6j7UF57+F3Kb0ebj5NMfZxPSY8jb7TEgnudbXT+ODul1D3afH/0Fpf/P7+MGASf/uZ8AgA/QmCAPRzqSAYgevv+hHKMYNg+OvZ0LAw/+OHQ/27lP6o6qc2Uvo8NH+MgDerj7UPuTJ9jL9hbkx4UkJizPmobltcXxVQ84R/lhAKAOMSBAHo58JBMAJPec/g7HURIwbBe1H/edh1mwt04c3weGd+JLOuL3aHdR7V7TFHeXT0ZdV3plrHbh3uFtY3O1MZa9tZdRYRAPoSBAHo50JBsAqBc/06B8FW+fTr2fN3ZUdu2ZpnO4bVujZjnmlpPDJalI2+ufciVuvbK/NG8e5EAK6ZIAhAP2eCYIS+fyL07d7+8r0ZArPOQfAg5ikX0RyUVNbYeStNlwmCs7orBMG6LNuNBICRCIIA9HMmCJaLUMLu9ytCYNY5CC6eEXxRzgjGGn6r6r/VjmAuB8P/Ixe7ggBcI0EQgH5aj4Zu3o7vw/m8XJYFrrGD4Gz+KM+r+oueEZy7bfQSZwRfbbTr/4vfy4+plt/PydFlMQBcE0EQgH6WnREsYXBpCMy+URA879bQsrN3mVtD6zlX3hqaVa+vyBfSeIcgANdAEASgn1WXxWyet9s1ZhDMZxXLztvCo6FjvkfwzP9hyfq2t4bKKO9/rPoDwDgEQQD6WRUEz9U5CE4ijR0PJkNdLq2zeNvx23WfPKY8+plT3ZvGmBwu35ZwGeVk+K1Sjp41Xg6/LKiG8ghq/r3n54VmALgaQRCAfma7ZFcoc2fxLqsKWovlKELbbrVzt2gr2t5FGKsD4WGE0qflxtOWCGxPt6JfFQAn+zFPBMutVv8VQXB2sU6USfzumRAJAP0IggB0FGHmQzk89xXlJMa+iDmacwMAvQiCAAAAa0YQBAAAWDOCIAAAwJoRBAEAANaMIAgAALBWbqT/AQ8RyC6IMhzkAAAAAElFTkSuQmCC" InformativeScreenshot="58a5190f43a545b93d5919ba419a9734.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -683,7 +686,7 @@
                                   </uix:TargetAnchorable>
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Preferred Seat'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_29" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
+                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Preferred Seat'" sap:VirtualizedContainerService.HintSize="606.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_29" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails?reload=true" DesignTimeRectangle="124, 556, 1714, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'No preferred seat'" FullSelectorArgument="&lt;webctrl id='input-54' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='input-54' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="b0a8a9ff-bd58-4446-b620-818429de2b11" ImageBase64="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" InformativeScreenshot="081d4114bb10f4974651dcf90bb6872d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -694,16 +697,69 @@
                                   </uix:TargetAnchorable>
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_32">
+                              <Assign sap:VirtualizedContainerService.HintSize="606.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_52">
                                 <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[SelectorV]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:Int32">[user]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;webctrl aaname='"&amp;  SEAT_TO_ORDER.Rows(0).Item("Seat").ToString.ToUpper() &amp;"' tag='LABEL' /&gt;"]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[SelectorV]" />
-                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_30" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
+                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Select user from SEAT_TO_ORDER" sap:VirtualizedContainerService.HintSize="606.4,820" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                                <ui:ForEachRow.Body>
+                                  <ActivityAction x:TypeArguments="sd:DataRow">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572.8,703.2" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[Convert.ToBoolean(CurrentRow.item(&quot;Done&quot;)) = False]" sap:VirtualizedContainerService.HintSize="510.4,469.6" sap2010:WorkflowViewState.IdRef="If_27">
+                                        <If.Then>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476.8,236" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_48">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[SelectorV]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;webctrl aaname='"&amp;  CurrentRow.Item("Seat").ToString.ToUpper() &amp;"' tag='LABEL' /&gt;"]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <ui:Break sap:VirtualizedContainerService.HintSize="433.6,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                      <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[user]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[user+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEachRow.Body>
+                              </ui:ForEachRow>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[SelectorV]" />
+                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="606.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_30" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails" DesignTimeRectangle="906, 432, 140, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="[SelectorV]" FuzzySelectorArgument="[SelectorV]" Guid="f9196014-cef3-4a1d-8694-ac72e989b178" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAYAAAAVpXQNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHHSURBVGhD7dkxy7FRHMdxr8GbuDNIBhkMvACLwWCgTLJbpSwsNi/AIDtZlDIgGSQlNiYLEZIU+d39z3We476f++m5hzP6fbbzd8Zv1znXxQUiCwyIrDAgssKAyAoDIivfAtputyiVSvj4+IDL5UI4HEaj0cDtdtM7Xi6XC2q1GiqVip7QOzIBSTyxWAyJRALj8Vit2+02AoEAyuUy7ve72nc6nVCtVk1kxWJRzek9mYCazSaCwSBWq5WeOCQmn8+H2Wym1hJMNBpFq9VCOp1mQG/OBFSv1xGJRLDZbPTEcT6f0e/3sdvt1Pp4POL5fOJ6vSKTyTCgN2cCms/n8Hg8KBQK6pj6DQMiYQKSp8pwOFR3HrfbrY6nXq/3zwu0YEAkTEB/SBidTgfJZFKFFAqFMJlM9K8vDIjEj4C+kjexXC6nIlqv13rqYEAkVECPxwPT6RSLxUINv1oul/B6vRgMBnriYEAkTED5fB6pVOrHBVpe3+VyPRqN9MTBgEiYI0yePvIdKJvNmg+J3W5XffOJx+M4HA56p4MBkfh2B/r7rwy/36/W+/1e73hhQCT+e4km+g0DIisMiKwwILLCgMgKAyIrDIgsAJ/69D+51ORZ+QAAAABJRU5ErkJggg==" InformativeScreenshot="3de27ee0a402ee74a902584cf90374ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -714,7 +770,7 @@
                                   </uix:TargetAnchorable>
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Confirm'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_31" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
+                              <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Confirm'" sap:VirtualizedContainerService.HintSize="606.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_31" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails" DesignTimeRectangle="1792, 601, 71, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Confirm'" FullSelectorArgument="&lt;webctrl aaname='Confirm' parentid='app' tag='SPAN' /&gt;" FuzzyAccuracy="0.72" FuzzySelectorArgument="&lt;webctrl aaname='Confirm' parentid='app' tag='SPAN' type='' class='v-btn__content' check:innerText='CONFIRM' /&gt;" Guid="97736240-9be0-4f62-a345-a3e389e022ea" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAVCAYAAAAOyhNtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOKSURBVFhH7ZZZSFRRGMeFKCKIgoIgqKAieiioHiIICiJ66CWIoKCXIoI2o43MUtNMXNJyKSlTs7RcylIztAyzJLVszCVzqTRNbVBzxt1x+7r/M+fk9Tq3uZeUXu4fDjPzzXfOPef3Lfe4kCHNMmDpkAFLhwxYOmTA0qEJsEZGR+leyTtaHuxNLu5HaY7PGXJ/nk5dA/3cY0zNnVba/yieZnmdpGkXXGn9jSDKr/9Ko9Iach1KS2T/p5SXcItdYW9f0fzLblTa0sQtdl88VzlgF3I0Dza5v9p+hN+6iABq7enmVruGRkboQGrChOcJjYOFRcML8miGx3HakxhLTyrLyC07jQHbEX+Lemw27kn0w2qhNeH+bNNeOZkUU1xAayP8GbinVRXcyy4BYFWoHzVaO7hVHdZC//MsYBlV5X+GqbmRe6jDmu19mn3C/25JEa0O86O50t6Lmxq41xismZ4nKPdbDbfa9d3yi5ZeuagNVm17Ky0K8KB9D+NpcHiYW4kC8l6wxV/XfeEWuw1g8upquYWoTYoUorklOow6ZZkoYGGcepbKIgipwVp59RKZu7u4ZaLUYCltRY31DKBvbha3jEFFQJBFYi9QtBRwnBPJ4RRWZnUFOxA+5frZ1cmiVdfRzn4jw7bHRdKmqGtk7e9jNiFszBGAFSE+dDgtaRzgqYaF77ChOoSE38HHD9ieGiz2TO8fGqSdCbdp1/1o2hoT7hwWFgKs7NrP3OJYOAgOBGDy0oQcrSEAfDK3sMzbHBVKHX29Dg8IX5GFYmgBo7T1DtroWEYKyxR58IVfUpmJVRGyCUKpzvM9Sw9Ki1kS/HdYmJdVU8myK1Tyw3AES9mzMMciy2A1WHLAGNOl3huc/3JcSxFzP0hwUIbIJmQV2gqafoW5me3VKSytZdhtG6Btsdd1laGAhY0fSU9mQPYmx/3VV01qsESDx4sJpbRMatb1fM9C8rkIArIJ5wUoABOJ4BSWaPA4jDIa/9rg5QBwABwEgZlMWHJbodTc8SaUv1AguR+uDoC0ITKYFvidY6WoGRauDoCAqwNSVOvVIehNDiV8fE8bb4aoXh2UAO6YCtldaKpgAZCr1LMADOCElH6oBARNlKNmWBAyCk1vSaAnW2SyLqVKAACPAEwVLKi6zUyLAz1od2IMAwEp/ZBNABpnKmK/dcEypC4Dlg4ZsHTIgKVDBiwdMmBpFtFvaWp/ikM/IEAAAAAASUVORK5CYII=" InformativeScreenshot="e5c0600e03af03b8a1534c0c2c487a94.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
@@ -725,12 +781,20 @@
                                   </uix:TargetAnchorable>
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_33">
+                              <Assign sap:VirtualizedContainerService.HintSize="606.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_33">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[Finish]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
                                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="606.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[SEAT_TO_ORDER.Rows(user).item("Done")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[True]</InArgument>
                                 </Assign.Value>
                               </Assign>
                             </Sequence>
@@ -813,11 +877,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">757.2,278.4</av:Point>
-                              <av:Size x:Key="ShapeSize">205.6,83.2</av:Size>
+                              <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">757.2,320 727.2,320 727.2,393.59999999999997 640,393.59999999999997 640,363.59999999999997</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Check Area suitability" sap:VirtualizedContainerService.HintSize="747.2,5113.6" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                          <Sequence DisplayName="Check Area suitability" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_64">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="ViewTable" />
                               <Variable x:TypeArguments="sd:DataTable" Name="ViewTableCount" />
@@ -1232,7 +1296,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">260,98.4</av:Point>
                                           <av:Size x:Key="ShapeSize">200,83.2</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">360,181.60000000000002 360,211.60000000000002 366.8,211.60000000000002 366.8,233.6</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">360,181.60000000000002 360,211.6 367.6,211.6 367.6,233.6</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <Sequence DisplayName="Total user filter" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
