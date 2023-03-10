@@ -499,13 +499,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">473.2,490 503.2,490 503.2,436.4 570.1999999999999,436.4 570.1999999999999,466.4</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check available seats (found = false)" sap:VirtualizedContainerService.HintSize="761.6,3066.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check available seats (found = false)" sap:VirtualizedContainerService.HintSize="223.2,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="728,2849.6" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="728,2846.4" sap2010:WorkflowViewState.IdRef="Sequence_58">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -531,12 +531,12 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="526.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_5" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" ScrapingOptions="{x:Null}" TextString="[Seat_avail]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
+                              <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="526.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_5" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" ScrapingOptions="{x:Null}" TextString="[Seat_avail]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
                                 <uix:NGetText.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails" DesignTimeRectangle="178, 472, 1738, 29" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'11/11'" FullSelectorArgument="&lt;webctrl aaname='11/11' class='col' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='col' parentid='app' tag='DIV' type='' /&gt;" Guid="e6cb85ef-3c83-4ce5-99a3-966c5e63f883" ImageBase64="" InformativeScreenshot="d47681961598299e5cbb680dc68fca2e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                                  <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails" DesignTimeRectangle="178, 427, 1738, 29" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'11/11'" FullSelectorArgument="&lt;webctrl aaname='11/11' class='col' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='col' parentid='app' tag='DIV' type='' /&gt;" Guid="e6cb85ef-3c83-4ce5-99a3-966c5e63f883" ImageBase64="" InformativeScreenshot="4d866998cf6f87f73ee42ce224890dd8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target Accuracy="0.88" DesignTimeRectangle="20, 472, 158, 29" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='7' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='col-1 col' parentid='app' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAhCAYAAABa1nBtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEBSURBVHhe7de9CoJQGIfxLqN77Araxak7aHBzaG9saBHBwQZpdCj3bHJ8k4NCVhw/IPgPzw9e8OA52wN6VgYIIERIIERIIERIIERIIERIIERIIERIIERIIERIIERImB5ik1sQbmy1Hc46jCxpuj3AQtNDLPZfEfYTFN0eYCFChARChARviI9bZqdLZte6XYyFWJdu7+n2dGeBObwhJvFbaGMh9u/j3J0F5vCGWKaR7Q6RHat2UZ3d868ZvE/v7iwwx/R/ROCPxkP0fJI/h0sLliJESJgeoucSMrjUAAsQIiRwWYEEQoQEQoQEQoQEQoQEQoQEQoQEQoQEQoQEQoQAsxekk5TUGqNwLwAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target Accuracy="0.88" DesignTimeRectangle="20, 427, 158, 29" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='7' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='col-1 col' parentid='app' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAhCAYAAABa1nBtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEBSURBVHhe7de9CoJQGIfxLqN77Araxak7aHBzaG9saBHBwQZpdCj3bHJ8k4NCVhw/IPgPzw9e8OA52wN6VgYIIERIIERIIERIIERIIERIIERIIERIIERIIERIIERImB5ik1sQbmy1Hc46jCxpuj3AQtNDLPZfEfYTFN0eYCFChARChARviI9bZqdLZte6XYyFWJdu7+n2dGeBObwhJvFbaGMh9u/j3J0F5vCGWKaR7Q6RHat2UZ3d868ZvE/v7iwwx/R/ROCPxkP0fJI/h0sLliJESJgeoucSMrjUAAsQIiRwWYEEQoQEQoQEQoQEQoQEQoQEQoQEQoQEQoQEQoQAsxekk5TUGqNwLwAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
                                       </scg:List>
                                     </uix:TargetAnchorable.Anchors>
                                   </uix:TargetAnchorable>
@@ -640,11 +640,11 @@
                                           </uix:TargetAnchorable>
                                         </uix:NClick.Target>
                                       </uix:NClick>
-                                      <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click Back" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_34" InUiElement="{x:Null}" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
+                                      <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click Back" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_34" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable Accuracy="0.84" DesignTimeRectangle="8, 46, 36, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Back'" FullSelectorArgument="&lt;ctrl name='Seat Booking - Google Chrome' role='pane' /&gt;&lt;ctrl name='Back' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Seat Booking - Google Chrome' role='pane' /&gt;&lt;ctrl name='Back' role='push button' automationid='' check:text='Back' /&gt;" Guid="1df5dc87-c1e6-4f75-9246-b6d44c633f4b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAgCAYAAABgrToAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC0SURBVFhH7dExCkIxEEVRd2ph4yIUBd1y6pEnN82vvjMv8ou5MEUCgZPkNIuDBq+B6eA1MB28BqaD18B08PzAMUbcn+/vVILnBU7c+XKN2+PFbi54PuAWp3UleB6gG6fg1YErcApeDbgKp+DVgEIJ98voQnuC93+gzuwJXv2LJ1Ivc7gvVquQ8OpAtQIJzwNUbiQ8H1BtkZXgeYFqIjWV4PmBruA1MB28BqaD18B08BqYLOID8AeD9PLTuZ0AAAAASUVORK5CYII=" InformativeScreenshot="7492d0d65ce90c34735401e35c99acf3.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Seat Booking - Google Chrome' /&gt;" SearchSteps="Selector, Image" Version="V1" Visibility="Interactive">
                                             <uix:TargetAnchorable.Anchors>
-                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                 <uix:Target DesignTimeRectangle="8, 8, 252, 35" ElementType="TabPage" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='Seat Booking - Google Chrome' role='pane' /&gt;&lt;ctrl name='Seat Booking' role='page tab' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Seat Booking - Google Chrome' role='pane' /&gt;&lt;ctrl name='Seat Booking' role='page tab' automationid='' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
                                               </scg:List>
                                             </uix:TargetAnchorable.Anchors>
@@ -705,7 +705,7 @@
                                   <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Select user from SEAT_TO_ORDER" sap:VirtualizedContainerService.HintSize="606.4,820" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Select user from SEAT_TO_ORDER" sap:VirtualizedContainerService.HintSize="606.4,820" sap2010:WorkflowViewState.IdRef="ForEachRow_6" MaxIterations="{x:Null}" Values="{x:Null}">
                                 <ui:ForEachRow.Body>
                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                     <ActivityAction.Argument>
@@ -1183,7 +1183,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                             <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="531.2,564.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                        <ui:InterruptibleWhile Condition="[update &lt; Total]" CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="531.2,564.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="{x:Null}">
                                           <ui:InterruptibleWhile.Body>
                                             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,397.6" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                               <sap:WorkflowViewStateService.ViewState>
@@ -1231,9 +1231,6 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                               </Assign>
                                             </Sequence>
                                           </ui:InterruptibleWhile.Body>
-                                          <ui:InterruptibleWhile.Condition>
-                                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="update &lt; Total" />
-                                          </ui:InterruptibleWhile.Condition>
                                         </ui:InterruptibleWhile>
                                         <Assign sap:VirtualizedContainerService.HintSize="531.2,80.8" sap2010:WorkflowViewState.IdRef="Assign_45">
                                           <Assign.To>
@@ -1299,7 +1296,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                           <av:PointCollection x:Key="ConnectorLocation">360,181.60000000000002 360,211.6 367.6,211.6 367.6,233.6</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Total user filter" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                      <Sequence DisplayName="Total user filter" sap:VirtualizedContainerService.HintSize="572.8,1750.4" sap2010:WorkflowViewState.IdRef="Sequence_44">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1336,7 +1333,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                                   <InArgument x:TypeArguments="sd:DataTable">[LibSelectTable.Select("Total_Seat_Area &gt;= '" +Total.ToString + "'").CopyToDataTable]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Area" DataTable="[LibSelectTable]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_4" Order="Ascending" OutputDataTable="[LibSelectTable]" SortOrder="Ascending" />
+                                              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Area" DataTable="[LibSelectTable]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_5" Order="Ascending" OutputDataTable="[LibSelectTable]" SortOrder="Ascending" />
                                             </Sequence>
                                           </If.Then>
                                           <If.Else>
@@ -1354,7 +1351,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                                   <InArgument x:TypeArguments="sd:DataTable">[LibSelectTable.Select("Total_Seat_Table &gt;= '" +Total.ToString + "'").CopyToDataTable]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Table" DataTable="[LibSelectTable]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Ascending" OutputDataTable="[LibSelectTable]" SortOrder="Ascending" />
+                                              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Table" DataTable="[LibSelectTable]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_6" Order="Ascending" OutputDataTable="[LibSelectTable]" SortOrder="Ascending" />
                                             </Sequence>
                                           </If.Else>
                                         </If>
@@ -1366,7 +1363,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                             <InArgument x:TypeArguments="x:String">[LIST_LIB(1).ToString]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <uasc:RemoveFromCollection x:TypeArguments="x:Object" Index="{x:Null}" Collection="[LIST_LIB]" DisplayName="Remove from collection" sap:VirtualizedContainerService.HintSize="510.4,52.8" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_4" Item="[SelectLibrary]" RemoveAllElements="False" Result="[LIST_LIB]">
+                                        <uasc:RemoveFromCollection x:TypeArguments="x:Object" Index="{x:Null}" Collection="[LIST_LIB]" DisplayName="Remove from collection" sap:VirtualizedContainerService.HintSize="510.4,52.8" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_5" Item="[SelectLibrary]" RemoveAllElements="False" Result="[LIST_LIB]">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
