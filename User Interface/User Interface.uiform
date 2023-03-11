@@ -1,0 +1,36 @@
+﻿{
+  "Metadata": {
+    "Id": "6e07ee57-9393-40d4-a675-8f48d2313530",
+    "DisplayName": "User Interface",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "User Interface",
+    "Width": 800,
+    "Height": 600,
+    "ShowInTaskbar": true,
+    "ShowMargin": true
+  },
+  "Data": {
+    "components": [
+      {
+        "title": "Container",
+        "collapsible": false,
+        "key": "container",
+        "type": "panel",
+        "label": "Panel",
+        "input": false,
+        "tableView": false,
+        "components": []
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
