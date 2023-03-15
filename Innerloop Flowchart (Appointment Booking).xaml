@@ -129,14 +129,14 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID4</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID2" Condition="[Found = true]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID2" Condition="[Found = true]" DisplayName="Found = true" sap:VirtualizedContainerService.HintSize="73.6,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">300.4,256.4</av:Point>
-          <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+          <av:Size x:Key="ShapeSize">73.6,87.2</av:Size>
           <av:PointCollection x:Key="TrueConnector">300.4,300 270.4,300 270.4,440 460,440</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">379.59999999999997,300 460,300</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">374,300 460,300</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -327,7 +327,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">459.99999999999994,143.6</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">560,196.39999999999998 560,226.39999999999998 340,226.39999999999998 340,256.4</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">560,196.39999999999998 560,226.39999999999998 337.2,226.39999999999998 337.2,256.4</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch DisplayName="Init Data collection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
