@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1067.2,2172.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>674.4,2170.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Data_Preparation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Data_Preparation" sap:VirtualizedContainerService.HintSize="684.8,2108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Data_Preparation" sap:VirtualizedContainerService.HintSize="684.8,2105.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Object" Name="LibCollect" />
       <Variable x:TypeArguments="sd:DataTable" Name="LIST_LIB_DT" />
@@ -148,7 +148,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelApplicationCard>
-    <Assign DisplayName="Get Certain column from Lib" sap:VirtualizedContainerService.HintSize="622.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Get Certain column from Lib" sap:VirtualizedContainerService.HintSize="622.4,80.8" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[LibList]</OutArgument>
       </Assign.To>
@@ -158,7 +158,7 @@
     </Assign>
     <ui:RemoveDuplicateRows DataTable="[LibList]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="622.4,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[LibList]" />
     <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Lib" DataTable="[LibList]" DisplayName="Sort Data largest to smallest library" sap:VirtualizedContainerService.HintSize="622.4,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[LibList]" SortOrder="Descending" />
-    <Assign sap:VirtualizedContainerService.HintSize="622.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="622.4,80.8" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[LibCollect]</OutArgument>
       </Assign.To>
@@ -177,7 +177,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uasc:BuildCollection>
-    <If Condition="[C_AVAIL = True]" DisplayName="Check C_AVAIL" sap:VirtualizedContainerService.HintSize="622.4,1296.8" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[C_AVAIL = True]" DisplayName="Check C_AVAIL" sap:VirtualizedContainerService.HintSize="622.4,1296" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,13 +185,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="588.8,891.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="588.8,890.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="LIST_LIB : Favourite + ALL other LIB" sap:VirtualizedContainerService.HintSize="545.6,801.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="LIST_LIB : Favourite + ALL other LIB" sap:VirtualizedContainerService.HintSize="545.6,800.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -204,7 +204,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,561.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,485.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,7 +236,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
-                    <uasc:AppendItemToCollection x:TypeArguments="x:Object" Collection="[LIST_LIB]" DisplayName="Append item to LIST_LIB" sap:VirtualizedContainerService.HintSize="387.2,247.2" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_8" Result="[LIST_LIB]">
+                    <uasc:AppendItemToCollection x:TypeArguments="x:Object" Collection="[LIST_LIB]" DisplayName="Append item to LIST_LIB" sap:VirtualizedContainerService.HintSize="387.2,171.2" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_8" Result="[LIST_LIB]">
                       <uasc:AppendItemToCollection.Items>
                         <scg:List x:TypeArguments="InArgument(x:Object)" Capacity="4">
                           <InArgument x:TypeArguments="x:Object">[currentItem.ToString]</InArgument>
@@ -253,7 +253,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <Assign DisplayName="Select Distinct" sap:VirtualizedContainerService.HintSize="483.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Select Distinct" sap:VirtualizedContainerService.HintSize="483.2,80.8" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[LibList]</OutArgument>
               </Assign.To>
@@ -276,7 +276,7 @@
                     <uasc:AppendItemToCollection x:TypeArguments="x:Object" Collection="[LIST_LIB]" DisplayName="Append item to LIST_LIB" sap:VirtualizedContainerService.HintSize="387.2,247.2" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_7" Result="[LIST_LIB]">
                       <uasc:AppendItemToCollection.Items>
                         <scg:List x:TypeArguments="InArgument(x:Object)" Capacity="4">
-                          <InArgument x:TypeArguments="x:Object">[CurrentRow.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:Object">[CurrentRow.Item("Library").ToString]</InArgument>
                         </scg:List>
                       </uasc:AppendItemToCollection.Items>
                     </uasc:AppendItemToCollection>

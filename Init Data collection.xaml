@@ -7,13 +7,13 @@
     <x:Property Name="Date_" Type="InOutArgument(x:String)" />
     <x:Property Name="Total" Type="InOutArgument(x:Int32)" />
     <x:Property Name="SEAT_TO_ORDER" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="FavouriteLib" Type="InOutArgument(s:String[])" />
     <x:Property Name="Found" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="SelectLib" Type="InOutArgument(s:String[])" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>740.8,696</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>771.2,602.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Init_Data_collection_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -112,7 +112,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Init for innerloop (Temp)" sap:VirtualizedContainerService.HintSize="492.8,631.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Init for innerloop (Temp)" sap:VirtualizedContainerService.HintSize="492.8,531.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,10 +123,10 @@
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="s:String[]">[FavouriteLib]</OutArgument>
+              <OutArgument x:TypeArguments="s:String[]">[SelectLib]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="s:String[]">[{"Ang Mo Kio Public Library","Bukit Panjang Public Library"}]</InArgument>
+              <InArgument x:TypeArguments="s:String[]">[{"Choa Chu Kang Public Library"}]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -134,7 +134,7 @@
               <OutArgument x:TypeArguments="x:Boolean">[C_AVAIL]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -158,7 +158,7 @@
               <OutArgument x:TypeArguments="x:String">[Start_time]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">7:45 pm</InArgument>
+              <InArgument x:TypeArguments="x:String">6:45 pm</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -166,7 +166,7 @@
               <OutArgument x:TypeArguments="x:String">[Duration]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">0:45</InArgument>
+              <InArgument x:TypeArguments="x:String">0:30</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -182,13 +182,12 @@
               <OutArgument x:TypeArguments="x:Boolean">[Found]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:BuildDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Build SEAT_TO_ORDER Data Table" sap:VirtualizedContainerService.HintSize="430.4,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;User&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Seat&quot; msdata:Caption=&quot;&quot; default=&quot;_&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Time_Left&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; default=&quot;3&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Library&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Area&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Done&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;User&gt;HendyLey&lt;/User&gt;&#xA;    &lt;Seat&gt;_&lt;/Seat&gt;&#xA;    &lt;Time_Left&gt;3&lt;/Time_Left&gt;&#xA;    &lt;Library&gt;_&lt;/Library&gt;&#xA;    &lt;Area&gt;_&lt;/Area&gt;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;User&gt;Pistato&lt;/User&gt;&#xA;    &lt;Seat&gt;_&lt;/Seat&gt;&#xA;    &lt;Time_Left&gt;3&lt;/Time_Left&gt;&#xA;    &lt;Library&gt;_&lt;/Library&gt;&#xA;    &lt;Area&gt;_&lt;/Area&gt;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;User&gt;Kyrive&lt;/User&gt;&#xA;    &lt;Seat&gt;_&lt;/Seat&gt;&#xA;    &lt;Time_Left&gt;3&lt;/Time_Left&gt;&#xA;    &lt;Library&gt;_&lt;/Library&gt;&#xA;    &lt;Area&gt;_&lt;/Area&gt;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:BuildDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Build SEAT_TO_ORDER Data Table" sap:VirtualizedContainerService.HintSize="430.4,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Seat&quot; msdata:Caption=&quot;&quot; default=&quot;_&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Time_Left&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; default=&quot;3&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Library&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Area&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Done&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;User&gt;HendyLey&lt;/User&gt;&#xD;&#xA;    &lt;Seat&gt;S34&lt;/Seat&gt;&#xD;&#xA;    &lt;Time_Left&gt;3&lt;/Time_Left&gt;&#xD;&#xA;    &lt;Library&gt;Ang Mo Kio Public Library&lt;/Library&gt;&#xD;&#xA;    &lt;Area&gt;Quiet Reading Room, Level 2&lt;/Area&gt;&#xD;&#xA;    &lt;Done&gt;true&lt;/Done&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;User&gt;Pistato&lt;/User&gt;&#xD;&#xA;    &lt;Seat&gt;S35&lt;/Seat&gt;&#xD;&#xA;    &lt;Time_Left&gt;3&lt;/Time_Left&gt;&#xD;&#xA;    &lt;Library&gt;Ang Mo Kio Public Library&lt;/Library&gt;&#xD;&#xA;    &lt;Area&gt;Quiet Reading Room, Level 2&lt;/Area&gt;&#xD;&#xA;    &lt;Done&gt;true&lt;/Done&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;User&gt;Kyrive&lt;/User&gt;&#xD;&#xA;    &lt;Seat&gt;S36&lt;/Seat&gt;&#xD;&#xA;    &lt;Time_Left&gt;3&lt;/Time_Left&gt;&#xD;&#xA;    &lt;Library&gt;Ang Mo Kio Public Library&lt;/Library&gt;&#xD;&#xA;    &lt;Area&gt;Quiet Reading Room, Level 2&lt;/Area&gt;&#xD;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Build SEAT_TO_ORDER Data Table" sap:VirtualizedContainerService.HintSize="430.4,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;User&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Seat&quot; msdata:Caption=&quot;&quot; default=&quot;_&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Time_Left&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; default=&quot;3&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Library&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Area&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Done&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;User&gt;HendyLey&lt;/User&gt;&#xA;    &lt;Seat&gt;_&lt;/Seat&gt;&#xA;    &lt;Time_Left&gt;4&lt;/Time_Left&gt;&#xA;    &lt;Library&gt;_&lt;/Library&gt;&#xA;    &lt;Area&gt;_&lt;/Area&gt;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;User&gt;Pistato&lt;/User&gt;&#xA;    &lt;Seat&gt;_&lt;/Seat&gt;&#xA;    &lt;Time_Left&gt;4&lt;/Time_Left&gt;&#xA;    &lt;Library&gt;_&lt;/Library&gt;&#xA;    &lt;Area&gt;_&lt;/Area&gt;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;User&gt;Kyrive&lt;/User&gt;&#xA;    &lt;Seat&gt;_&lt;/Seat&gt;&#xA;    &lt;Time_Left&gt;4&lt;/Time_Left&gt;&#xA;    &lt;Library&gt;_&lt;/Library&gt;&#xA;    &lt;Area&gt;_&lt;/Area&gt;&#xA;    &lt;Done&gt;false&lt;/Done&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
   </Sequence>
 </Activity>
