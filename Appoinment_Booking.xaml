@@ -15,7 +15,7 @@
   <sap:VirtualizedContainerService.HintSize>988.8,885.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Appoinment_Booking_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="90">
+    <scg:List x:TypeArguments="x:String" Capacity="64">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -37,8 +37,6 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.ComponentModel</x:String>
@@ -63,6 +61,8 @@
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -357,7 +357,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">250,506.4</av:Point>
               <av:Size x:Key="ShapeSize">200,83.2</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">350,589.6 350,619.6 351.6,619.6 351.6,633.6</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">350,589.6 350,619.6 350.4,619.6 350.4,633.6</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="Per Area Find Seats" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -507,17 +507,17 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">240,633.6</av:Point>
-                  <av:Size x:Key="ShapeSize">223.2,52.8</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">463.2,660 679.1999999999999,660 679.1999999999999,696.4</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">220.8,52.8</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">460.8,660 679.1999999999999,660 679.1999999999999,696.4</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check available seats (found = false)" sap:VirtualizedContainerService.HintSize="223.2,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check available seats (found = false)" sap:VirtualizedContainerService.HintSize="220.8,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="728,2900" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="728,2896.8" sap2010:WorkflowViewState.IdRef="Sequence_58">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -595,11 +595,11 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
+                                      <uix:NClick AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_26" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/new/bookingdetails" DesignTimeRectangle="1000, 632, 894, 23" DesignTimeScaleFactor="1.25" FriendlyName="'Book'" FullSelectorArgument="&lt;webctrl aaname='Book*' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Book ' tag='SPAN' type='' class='v-btn__content' check:innerText='BOOK' /&gt;" Guid="d2685921-5867-4e8a-9b42-9fed7df18db1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA4IAAAAbCAYAAAApiDF3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARvSURBVHhe7d1Pa5RHHAdw34ovoW8hR1+C1x579C306LGHHnotOeUiLQFRe7MgKBWpJAdFKkERJVJSQsKG6W82z6yzm9lNYuaJh/0MfGB3/u0kty/zzDw30s83EgAAAOtDEAQAAFgzgiAA49i6ldKj2yndu9lun4q2+9HnUfRttgMAYxAEARjHzss0LXt32u1T0XaUO0XfZjsAMAZBEIC+NjdOdwJfvZ7mwPT+7un3pmibBsHom7/fj7GtOQGArgRBAPrZvJPS4TT+fX1ZuYMIAPQgCALQz8vhcdArFY+JAsDYBEEA+innAq9UBEEAGJsgCEA/3zwIlstnGuXoXUq7PzTGDLai7UP0mQz9czl4ltKTVTea3kzp+e8pHVbPw072U9r7KaXNVv9qfTsLbdu/fPnt/fhctwFAZ4IgAP2UIHgcgepTfL6UGDMt8bk194VUQWsS4ex4cDLU5fK2cQaxDmG55LGzMfH5TevcYoTAt2XNUU6iXz3HUYTI7cUxS4Jgfbby8OGSEAkA/QiCAPRTguBX7WjFmGnpFATndtwitO3tn9YfP67qs1sp/XvalA6j7UF57+F3Kb0ebj5NMfZxPSY8jb7TEgnudbXT+ODul1D3afH/0Fpf/P7+MGASf/uZ8AgA/QmCAPRzqSAYgevv+hHKMYNg+OvZ0LAw/+OHQ/27lP6o6qc2Uvo8NH+MgDerj7UPuTJ9jL9hbkx4UkJizPmobltcXxVQ84R/lhAKAOMSBAHo58JBMAJPec/g7HURIwbBe1H/edh1mwt04c3weGd+JLOuL3aHdR7V7TFHeXT0ZdV3plrHbh3uFtY3O1MZa9tZdRYRAPoSBAHo50JBsAqBc/06B8FW+fTr2fN3ZUdu2ZpnO4bVujZjnmlpPDJalI2+ufciVuvbK/NG8e5EAK6ZIAhAP2eCYIS+fyL07d7+8r0ZArPOQfAg5ikX0RyUVNbYeStNlwmCs7orBMG6LNuNBICRCIIA9HMmCJaLUMLu9ytCYNY5CC6eEXxRzgjGGn6r6r/VjmAuB8P/Ixe7ggBcI0EQgH5aj4Zu3o7vw/m8XJYFrrGD4Gz+KM+r+oueEZy7bfQSZwRfbbTr/4vfy4+plt/PydFlMQBcE0EQgH6WnREsYXBpCMy+URA879bQsrN3mVtD6zlX3hqaVa+vyBfSeIcgANdAEASgn1WXxWyet9s1ZhDMZxXLztvCo6FjvkfwzP9hyfq2t4bKKO9/rPoDwDgEQQD6WRUEz9U5CE4ijR0PJkNdLq2zeNvx23WfPKY8+plT3ZvGmBwu35ZwGeVk+K1Sjp41Xg6/LKiG8ghq/r3n54VmALgaQRCAfma7ZFcoc2fxLqsKWovlKELbbrVzt2gr2t5FGKsD4WGE0qflxtOWCGxPt6JfFQAn+zFPBMutVv8VQXB2sU6USfzumRAJAP0IggB0FGHmQzk89xXlJMa+iDmacwMAvQiCAAAAa0YQBAAAWDOCIAAAwJoRBAEAANaMIAgAALBWbqT/AQ8RyC6IMhzkAAAAAElFTkSuQmCC" InformativeScreenshot="58a5190f43a545b93d5919ba419a9734.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                             <uix:TargetAnchorable.Anchors>
-                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                 <uix:Target Accuracy="0.98" DesignTimeRectangle="1401, 632, 23, 23" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;i' idx='2' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='v-icon notranslate v-icon--left mdi mdi-calendar-check theme--dark' tag='I' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEqSURBVEhL7ZY9CsJAEEZzFa9i6RFsPYLXsLSwsE9lY5nC0s5KDFpoIYgiSEpRkPGbya6aZOLfJpLCgQfZzM48s9ksetTz6FdUSDZoEI2aRMOanheQCzBnhLlq/s5z2TwkiU1bzwvInXgS5qr5O7rMr8dPtFyJi3adeKyCnMgwl8cBarWeICvz8UuPovg+clYiKwvN0jmFvqRZmX1PTlFp2XlLdMD1R6BGAtfpviBfFvWT998CNRKlyPBBz7rYwXZcmgwi+x3etnopsgdRYp6zDI3XaLzA6WDHqohxluGAjfhIAYvWExHjLAM+nkqEJlQRU4SMscJcEVOUjPHxvtL3EhQpe8mnssnYFDjEGT3SfUFWxrtvH5mqL+KC2qn+F0GRlcdfVgg/lHl0BXjqeBJ6jbZSAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
                                               </scg:List>
                                             </uix:TargetAnchorable.Anchors>
@@ -617,7 +617,7 @@
                                           </uix:TargetAnchorable>
                                         </uix:NClick.Target>
                                       </uix:NClick>
-                                      <uix:NGetAttribute Attribute="innerText" DisplayName="Get Seats info" sap:VirtualizedContainerService.HintSize="387.2,208" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Version="V3">
+                                      <uix:NGetAttribute Attribute="innerText" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Seats info" sap:VirtualizedContainerService.HintSize="387.2,208" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="2b753a32-9dab-44fc-94ea-88a879eacaed" Timeout="{x:Null}" Version="V3">
                                         <uix:NGetAttribute.Result>
                                           <OutArgument x:TypeArguments="x:String">[Seat_avail]</OutArgument>
                                         </uix:NGetAttribute.Result>
@@ -822,7 +822,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">660.4,696.4</av:Point>
                       <av:Size x:Key="ShapeSize">75.2,87.2</av:Size>
-                      <av:PointCollection x:Key="FalseConnector">735.6,740 850,740 850,431.59999999999997</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">735.6,740 847.2,740 847.2,431.59999999999997</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.False>
@@ -830,11 +830,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">747.2,348.4</av:Point>
-                          <av:Size x:Key="ShapeSize">205.6,83.2</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">850,348.4 850,318.4 848,318.4 848,293.6</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">847.2,348.4 847.2,318.4 848,318.4 848,293.6</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Check Area suitability" sap:VirtualizedContainerService.HintSize="747.2,4793.6" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                      <Sequence DisplayName="Check Area suitability" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_64">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataTable" Name="ViewTable" />
                           <Variable x:TypeArguments="sd:DataTable" Name="ViewTableCount" />
@@ -1229,16 +1229,16 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                       <av:PointCollection x:Key="ConnectorLocation">350,301.59999999999997 350,331.59999999999997 620.4,331.59999999999997 620.4,303.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Explore Library" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                                  <Sequence DisplayName="Explore Library" sap:VirtualizedContainerService.HintSize="532.8,1218.4" sap2010:WorkflowViewState.IdRef="Sequence_96">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <TryCatch DisplayName="Check every Library in the list (return error if not found)" sap:VirtualizedContainerService.HintSize="470.4,312" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                    <TryCatch DisplayName="Check every Library in the list (return error if not found)" sap:VirtualizedContainerService.HintSize="470.4,312.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                       <TryCatch.Try>
-                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_54">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[SelectLibrary]</OutArgument>
                                           </Assign.To>
@@ -1293,7 +1293,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                         </Catch>
                                       </TryCatch.Catches>
                                     </TryCatch>
-                                    <uasc:RemoveFromCollection x:TypeArguments="x:Object" Index="{x:Null}" Collection="[LIST_LIB]" DisplayName="Remove from collection" sap:VirtualizedContainerService.HintSize="470.4,52.8" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_9" Item="[SelectLibrary]" RemoveAllElements="False" Result="[LIST_LIB]">
+                                    <uasc:RemoveFromCollection x:TypeArguments="x:Object" Index="{x:Null}" Collection="[LIST_LIB]" DisplayName="Remove from collection" sap:VirtualizedContainerService.HintSize="470.4,52.8" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_10" Item="[SelectLibrary]" RemoveAllElements="False" Result="[LIST_LIB]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1320,7 +1320,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                                         </scg:List>
                                       </ui:FilterDataTable.SelectColumns>
                                     </ui:FilterDataTable>
-                                    <Assign DisplayName="Select Distinct" sap:VirtualizedContainerService.HintSize="470.4,80.8" sap2010:WorkflowViewState.IdRef="Assign_55">
+                                    <Assign DisplayName="Select Distinct" sap:VirtualizedContainerService.HintSize="470.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_55">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="sd:DataTable">[LibtoAreaT]</OutArgument>
                                       </Assign.To>
@@ -1467,7 +1467,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_61">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[LibSelectTable]</OutArgument>
               </Assign.To>
@@ -1475,7 +1475,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                 <InArgument x:TypeArguments="sd:DataTable">[New DataView(LIBDATA).ToTable(False,New List(Of String)({"Library","Area","Seat","Tableid","Total_Seat_Lib","Total_Seat_Area","Total_Seat_Table"}).ToArray)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_60">
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_60">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[LibSelectTable]</OutArgument>
               </Assign.To>
@@ -1483,7 +1483,7 @@ Select ViewTableCount.Rows.Add(ra)).CopyToDatatable]</InArgument>
                 <InArgument x:TypeArguments="sd:DataTable">[LibSelectTable.Select("Total_Seat_Table &gt;= '" +Total.ToString + "'").CopyToDataTable]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Table" DataTable="[LibSelectTable]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_13" Order="Ascending" OutputDataTable="[LibSelectTable]" SortOrder="Ascending" />
+            <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Table" DataTable="[LibSelectTable]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_14" Order="Ascending" OutputDataTable="[LibSelectTable]" SortOrder="Ascending" />
           </Sequence>
           <FlowStep.Next>
             <x:Reference>__ReferenceID3</x:Reference>

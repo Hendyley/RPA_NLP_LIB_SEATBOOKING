@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Send_Telegram_Message" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1114.4,1453.6" sap2010:WorkflowViewState.IdRef="Send_Telegram_Message_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="72">
+    <scg:List x:TypeArguments="x:String" Capacity="64">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -22,8 +22,6 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>UiPath.Web</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
@@ -148,7 +146,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SeatPlan : &quot; + split(split(SeatPlan_img,&quot;(&quot;)(1).ToString, &quot;)&quot;)(0).ToString.Trim +Environment.NewLine+&#xD;&#xA;&quot;FloorPlan : &quot; + split(split(FloorPlan_img,&quot;(&quot;)(1).ToString, &quot;)&quot;)(0).ToString.Trim +Environment.NewLine]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SeatPlan : &quot; + split(split(SeatPlan_img,&quot;(&quot;)(1).ToString, &quot;)&quot;)(0).ToString.Trim +Environment.NewLine+&#xA;&quot;FloorPlan : &quot; + split(split(FloorPlan_img,&quot;(&quot;)(1).ToString, &quot;)&quot;)(0).ToString.Trim +Environment.NewLine]" />
     <Assign sap:VirtualizedContainerService.HintSize="483.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
