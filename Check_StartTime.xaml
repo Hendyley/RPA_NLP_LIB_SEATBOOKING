@@ -172,7 +172,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <If Condition="[cur_hrpart &lt; first_bkinghr.Hour]" sap:VirtualizedContainerService.HintSize="623,3042" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[(cur_hrpart &lt; first_bkinghr.Hour) OR (cur_hrpart &gt;= last_bkinghr.Hour)]" sap:VirtualizedContainerService.HintSize="623,3042" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

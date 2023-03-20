@@ -5,14 +5,14 @@
     <x:Property Name="Start_time" Type="InArgument(x:String)" />
     <x:Property Name="Total" Type="InArgument(x:Int32)" />
     <x:Property Name="Found" Type="InArgument(x:Boolean)" />
-    <x:Property Name="Duration" Type="InArgument(x:String)" />
+    <x:Property Name="Duration" Type="InOutArgument(x:String)" />
     <x:Property Name="SELECTED_USER_DT" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="SEAT_TO_ORDER" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>907.2,724</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1461,827</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Final_Flow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -119,21 +119,17 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Final_Flow" sap:VirtualizedContainerService.HintSize="917.6,659.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Final_Flow" sap:VirtualizedContainerService.HintSize="918,660" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="username" />
       <Variable x:TypeArguments="x:String" Name="msg" />
-      <Variable x:TypeArguments="x:Boolean" Name="Done">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="Done" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">20,22.400000000000006</av:Point>
-        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">80,60.00000000000001 110,60.00000000000001 110,60.4 200,60.4</av:PointCollection>
         <x:Double x:Key="Width">884</x:Double>
         <x:Double x:Key="Height">622.7</x:Double>
@@ -146,36 +142,20 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,34</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,86.8 300,133.52</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitialFlow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="InitialFlow.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitialFlow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="InitialFlow.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="s:String[]" x:Key="SelectLib">
-            <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="SelectLib" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="x:String" x:Key="Start_time">
-            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Start_time" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="x:Int32" x:Key="Total">
-            <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="Total" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="x:String" x:Key="Duration">
-            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Duration" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="x:Boolean" x:Key="C_AVAIL">
-            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="C_AVAIL" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="x:Boolean" x:Key="Found">
-            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Found" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SEAT_TO_ORDER" />
-          </InOutArgument>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="selected_userdt">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SELECTED_USER_DT" />
-          </InOutArgument>
+          <InOutArgument x:TypeArguments="s:String[]" x:Key="SelectLib">[SelectLib]</InOutArgument>
+          <InOutArgument x:TypeArguments="x:String" x:Key="Start_time">[Start_time]</InOutArgument>
+          <InOutArgument x:TypeArguments="x:Int32" x:Key="Total">[Total]</InOutArgument>
+          <InOutArgument x:TypeArguments="x:String" x:Key="Duration">[Duration]</InOutArgument>
+          <InOutArgument x:TypeArguments="x:Boolean" x:Key="C_AVAIL">[C_AVAIL]</InOutArgument>
+          <InOutArgument x:TypeArguments="x:Boolean" x:Key="Found">[Found]</InOutArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">[SEAT_TO_ORDER]</InOutArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="selected_userdt">[SELECTED_USER_DT]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -188,11 +168,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,133.52</av:Point>
-              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+              <av:Size x:Key="ShapeSize">200,52</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,186.32 300,223.52</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="User Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="User Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -329,24 +309,24 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,223.52</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                  <av:Size x:Key="ShapeSize">200,52</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">300,276.32 300,324</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Check_Duration.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Check_Duration.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TryCatch.Try>
-                  <Sequence sap:VirtualizedContainerService.HintSize="472.8,548.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence sap:VirtualizedContainerService.HintSize="472,542" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[Found = true]" sap:VirtualizedContainerService.HintSize="410.4,436.8" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[Found = true]" sap:VirtualizedContainerService.HintSize="410,431" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -354,13 +334,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check_Duration.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Check_Duration.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check_Duration.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Check_Duration.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="input_Duration">[Duration]</InArgument>
                               <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">[SEAT_TO_ORDER]</InOutArgument>
@@ -374,7 +354,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -386,7 +366,7 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="476,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="476,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -397,13 +377,13 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <Sequence sap:VirtualizedContainerService.HintSize="449.6,364" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="592,386" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Notify users" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Notify users" sap:VirtualizedContainerService.HintSize="530,52" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -503,42 +483,22 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,324</av:Point>
-                      <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                      <av:Size x:Key="ShapeSize">200,52</av:Size>
                       <av:PointCollection x:Key="ConnectorLocation">300,376.8 300,424</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Innerloop Flowchart (Appointment Booking).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Innerloop Flowchart (Appointment Booking).xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Innerloop Flowchart (Appointment Booking).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Innerloop Flowchart (Appointment Booking).xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InOutArgument x:TypeArguments="x:Int32" x:Key="Total">
-                        <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="Total" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">
-                        <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SEAT_TO_ORDER" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="Found">
-                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Found" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="username">
-                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="username" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="msg">
-                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="msg" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="Done">
-                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Done" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="s:String[]" x:Key="SelectLib">
-                        <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="SelectLib" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="Duration">
-                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Duration" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="C_AVAIL">
-                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="C_AVAIL" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="Start_time">
-                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Start_time" />
-                      </InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="Total">[Total]</InOutArgument>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">[SEAT_TO_ORDER]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="Found">[Found]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="username">[username]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="msg">[msg]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="Done">[Done]</InOutArgument>
+                      <InOutArgument x:TypeArguments="s:String[]" x:Key="SelectLib">[SelectLib]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="Duration">[Duration]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Boolean" x:Key="C_AVAIL">[C_AVAIL]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="Start_time">[Start_time]</InOutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -551,24 +511,16 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">200,424</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                          <av:Size x:Key="ShapeSize">200,52</av:Size>
                           <av:PointCollection x:Key="ConnectorLocation">300,476.8 300,539.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Telegram_Message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Send_Telegram_Message.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Telegram_Message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Send_Telegram_Message.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">
-                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SEAT_TO_ORDER" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="Done">
-                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="Done" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="username">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="username" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="msg">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="msg" />
-                          </InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SEAT_TO_ORDER">[SEAT_TO_ORDER]</InOutArgument>
+                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="Done">[Done]</InOutArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="username">[username]</InOutArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="msg">[msg]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -581,11 +533,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">200,539.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,83.2</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">400,581.1 545.6,581.1 545.6,203.60000000000002</av:PointCollection>
+                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">400,580 545.4,580 545.4,203.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Check if all user done" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                          <Sequence DisplayName="Check if all user done" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -678,15 +630,12 @@
                             </ui:ForEachRow>
                           </Sequence>
                           <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID3" DisplayName="Finish?" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                              <FlowDecision.Condition>
-                                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Done = True" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID3" Condition="[Done = True]" DisplayName="Finish?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <av:Point x:Key="ShapeLocation">510.4,116.4</av:Point>
-                                  <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
+                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
                                   <av:PointCollection x:Key="FalseConnector">580.8,160 610.8,160 610.8,100 430,100 430,159.92000000000002 400,159.92000000000002</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
