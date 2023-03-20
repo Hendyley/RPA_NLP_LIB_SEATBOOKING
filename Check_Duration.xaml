@@ -1,11 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Check_Duration" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Check_Duration" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="User_Duration" Type="InOutArgument(x:String)" />
+    <x:Property Name="input_Duration" Type="InArgument(x:String)" />
+    <x:Property Name="SEAT_TO_ORDER" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>856,1472</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1356,2060.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_Duration_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -45,10 +46,19 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="128">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -108,32 +118,46 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_Duration" sap:VirtualizedContainerService.HintSize="546,1407" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_Duration" sap:VirtualizedContainerService.HintSize="545.6,1996" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OCR_output" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="regex_output" />
+      <Variable x:TypeArguments="x:String" Name="User_Duration" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Seat Booking" sap:VirtualizedContainerService.HintSize="484,953" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1ac36f93-b040-4511-99ca-08f78e964872" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Seat Booking" sap:VirtualizedContainerService.HintSize="483.2,994.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1ac36f93-b040-4511-99ca-08f78e964872" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,736" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,777.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <uix:NClick ClickType="Single" DisplayName="Click 'Account'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ac36f93-b040-4511-99ca-08f78e964872" Version="V3">
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Account'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ac36f93-b040-4511-99ca-08f78e964872" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.nlb.gov.sg/seatbooking/" DesignTimeRectangle="1118, 1007, 20, 20" DesignTimeScaleFactor="1" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl idx='3' parentid='bottomNavigation' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='bottomNavigation' tag='I' class='v-icon notranslate mdi mdi-account-circle theme--light' aaname='' /&gt;" Guid="bc90c67f-06d2-4194-917e-4593c1d57e49" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI0SURBVEhL7VVNq6lRFL4/xJ8wk6QkHx0np6QIpQwcnYH8hBOdga+SgQkDysBPEBJ/QVEGJx8DIxEZEc/t2d7t8+Dc272T231qt1prPWs/e6937/3+wF/GPy6w2+0wmUzQaDSQy+WQyWSEpc84849wU2A6naJQKECv18PhcMBqtcJiscBsNgufcebJu4cvBT4/PxEKhWCz2RAMBoWNxWKoVCqIx+N4eno6xMkj/xauBLj1SCQCu90uJuFk1WoV2+1W5GnpSxHyyGfdVzgT2Gw2YpVy5W63Gx8fH5jP5wpjD/qMMy93Ui6XsV6vFcYRZwLD4RAejwd+v18UulwuJBIJLJdLhbEHfcaZJ498r9eLwWCgMI44E2i324fWcAQCATidTnS7XYWxB33GmZfcl5cX1Ot1hXHEQUC2h4WyiIM7en19FeL9fl9Y+oyf8ljHes5zioMA+1cqla4E2Ibn52eo1WqYTCZh6cv2yME61l9+h5s7YE+NRiOSySRarRbG4zFWq5Ww9BlnnjwpcHcHhPwGLAqHw+j1ejdvK+PMk0f+w29A8BSRTBGKfQdyUT6fT9Rf4kxAtkmn0yGVSl2d/0ssFguk02loNBoUi8XH94CQN1mlUuH9/R2j0eiqTfQZj0ajgvftmyzBt+Xt7Q1arRYGgwHZbBa1Wg2dTkdY+owz/8tvkcRsNhOvJSfiC8ojylNDS5/x335NJdgKTtBsNpHP58X/gJY+47dO2CnuCvwJ/Bd4AOAnVzjWIHAzCXQAAAAASUVORK5CYII=" InformativeScreenshot="bd7584606dd8e1b76f3e6744eb6776ac.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -144,13 +168,13 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'CIRCLE'" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+            <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'CIRCLE'" sap:VirtualizedContainerService.HintSize="387.2,212" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
               <ui:GetOCRText.OCREngine>
-                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
                   <ActivityFunc.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                    <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
                   </ActivityFunc.Argument>
-                  <p:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Screen OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="auto" Profile="Screen" Scale="1" Timeout="100000" />
+                  <p:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Screen OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="auto" Profile="Screen" Scale="1" Timeout="100000" />
                 </ActivityFunc>
               </ui:GetOCRText.OCREngine>
               <ui:GetOCRText.Target>
@@ -167,7 +191,7 @@
                 <OutArgument x:TypeArguments="x:String">[OCR_output]</OutArgument>
               </ui:GetOCRText.Text>
             </ui:GetOCRText>
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.nlb.gov.sg/seatbooking/" Version="V3" />
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.nlb.gov.sg/seatbooking/" Version="V3" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -175,7 +199,7 @@
         <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="084bd8336d0427be7e72380621dc1f7d.jpg" Selector="&lt;html app='chrome.exe' title='Seat Booking' /&gt;" Url="https://www.nlb.gov.sg/seatbooking/" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Assign sap:VirtualizedContainerService.HintSize="484,81" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[OCR_output]</OutArgument>
       </Assign.To>
@@ -183,8 +207,8 @@
         <InArgument x:TypeArguments="x:String">[OCR_output.Replace(" ","")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:Matches BuilderPattern="\d:\d\d(?=.\d:\d\d)" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[OCR_output]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\d:\\d\\d(?=.\\d:\\d\\d)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\d:\d\d(?=.\d:\d\d)" RegexOption="IgnoreCase, Compiled" Result="[regex_output]" />
-    <Assign sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <ui:Matches BuilderPattern="\d:\d\d(?=.\d:\d\d)" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[OCR_output]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\\d:\\d\\d(?=.\\d:\\d\\d)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\d:\d\d(?=.\d:\d\d)" RegexOption="IgnoreCase, Compiled" Result="[regex_output]" />
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[User_Duration]</OutArgument>
       </Assign.To>
@@ -192,5 +216,95 @@
         <InArgument x:TypeArguments="x:String">[regex_output(0).ToString()]</InArgument>
       </Assign.Value>
     </Assign>
+    <If Condition="[datetime.ParseExact(User_Duration,&quot;h:mm&quot;, system.Globalization.CultureInfo.InvariantCulture) &lt; datetime.ParseExact(input_duration,&quot;h:mm&quot;, system.Globalization.CultureInfo.InvariantCulture)]" sap:VirtualizedContainerService.HintSize="483.2,506.4" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="377.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="msg" />
+            <Variable x:TypeArguments="x:String" Name="username" />
+            <Variable x:TypeArguments="x:Int32" Name="i" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Notify users" sap:VirtualizedContainerService.HintSize="334.4,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,426.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow.Item("tele_id").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[msg]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Error Duration out of bound</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="http://hackathonserver.pythonanywhere.com/send" sap:VirtualizedContainerService.HintSize="433.6,71.2" sap2010:WorkflowViewState.IdRef="HttpClient_4" Method="GET" TimeoutMS="6000">
+                    <ui:HttpClient.Attachments>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Attachments>
+                    <ui:HttpClient.Cookies>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Cookies>
+                    <ui:HttpClient.Headers>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.Headers>
+                    <ui:HttpClient.Parameters>
+                      <InArgument x:TypeArguments="x:String" x:Key="receiver">[username]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="message">[msg]</InArgument>
+                    </ui:HttpClient.Parameters>
+                    <ui:HttpClient.UrlSegments>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </ui:HttpClient.UrlSegments>
+                  </ui:HttpClient>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
+          <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2" Reason="[msg]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </TerminateWorkflow>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
