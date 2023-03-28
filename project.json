@@ -20,12 +20,12 @@
       "serviceDocument": ".entities/EntitiesStore.json",
       "tenantName": "DefaultTenant",
       "namespace": "RPA_Hackaton",
-      "uniqueReference": "Zxo9GJ3YYJB/iVwUSOnVssEzHGImh8tNdSm9U3S43yA="
+      "uniqueReference": "/xboCVvgFpYwaptPU9Xg8VS0RpealhiDLI3Yg9mfl04="
     }
   ],
   "schemaVersion": "4.0",
   "studioVersion": "22.12.0.0",
-  "projectVersion": "1.0.5",
+  "projectVersion": "1.0.8",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -60,14 +60,14 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Innerloop Flowchart (Appointment Booking).xaml",
-      "uniqueId": "aa18fbf2-b800-4cc9-8abe-691b932a688d",
+      "filePath": "Final_Flow.xaml",
+      "uniqueId": "2a4e0513-afc8-401a-bc79-0f8eb0011865",
       "input": [],
       "output": []
     },
     {
-      "filePath": "Final_Flow.xaml",
-      "uniqueId": "2a4e0513-afc8-401a-bc79-0f8eb0011865",
+      "filePath": "innerLoop\\Innerloop Flowchart (Appointment Booking).xaml",
+      "uniqueId": "e7524a74-654f-4a44-8a39-f45635aa11f9",
       "input": [],
       "output": []
     }
