@@ -8,21 +8,13 @@
     "Title": "User Interface",
     "Width": 800,
     "Height": 600,
+    "Theme": "Default",
     "ShowInTaskbar": true,
-    "ShowMargin": true
+    "ShowMargin": true,
+    "CustomStyle": ""
   },
   "Data": {
     "components": [
-      {
-        "title": "Container",
-        "collapsible": false,
-        "key": "container",
-        "type": "panel",
-        "label": "Panel",
-        "input": false,
-        "tableView": false,
-        "components": []
-      },
       {
         "type": "button",
         "label": "Submit",

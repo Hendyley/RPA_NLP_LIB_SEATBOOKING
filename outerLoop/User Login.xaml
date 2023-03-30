@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>888,1832</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,1830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>User_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -47,6 +47,7 @@
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Net</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,18 +110,27 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="User_Login" sap:VirtualizedContainerService.HintSize="545.6,1767.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="User_Login" sap:VirtualizedContainerService.HintSize="592,1826" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="nxt" />
+      <Variable x:TypeArguments="x:String" Name="pass" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="483.2,80.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[nxt]</OutArgument>
       </Assign.To>
@@ -128,37 +138,37 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Find the next user" sap:VirtualizedContainerService.HintSize="483.2,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SEAT_TO_ORDER]" DisplayName="Find the next user" sap:VirtualizedContainerService.HintSize="530,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572.8,548.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572,544" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[Convert.ToBoolean(CurrentRow.Item(&quot;Done&quot;) )  = False]" sap:VirtualizedContainerService.HintSize="510.4,436.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Convert.ToBoolean(CurrentRow.Item(&quot;Done&quot;) )  = False]" sap:VirtualizedContainerService.HintSize="510,433" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="377.6,114.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Break sap:VirtualizedContainerService.HintSize="334.4,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
+                  <ui:Break sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Break_1" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[nxt]</OutArgument>
                     </Assign.To>
@@ -179,30 +189,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:GetRobotCredential AssetName="[SEAT_TO_ORDER.Rows(nxt).item(&quot;asset_id&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="483.2,142.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[username]">
-      <ui:GetRobotCredential.TimeoutMS>
-        <InArgument x:TypeArguments="x:Int32" />
-      </ui:GetRobotCredential.TimeoutMS>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:GetRobotCredential>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Login using myLibrary username" sap:VirtualizedContainerService.HintSize="483.2,1259.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="Always" ScopeGuid="b5c268b8-a8aa-4791-aae5-c669bc850959" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Login using myLibrary username" sap:VirtualizedContainerService.HintSize="530,1501" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="Always" ScopeGuid="b5c268b8-a8aa-4791-aae5-c669bc850959" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1042.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1284" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b5c268b8-a8aa-4791-aae5-c669bc850959" Text="[username]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b5c268b8-a8aa-4791-aae5-c669bc850959" Text="[SEAT_TO_ORDER.Rows(nxt).item(&quot;User&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://cassamv2.nlb.gov.sg/cas/login?service=https%3A%2F%2Fcassamv2.nlb.gov.sg%2Fcas%2Foauth2.0%2FcallbackAuthorize%3Fclient_name%3DCasOAuthClient%26client_id%3DFriHB2fqOlskzHOtKBorvlPTfgWGf4p3%26redirect_uri%3Dhttps%3A%2F%2Fwww.nlb.gov.sg%2Fseatbooking%2F&amp;applicationId=SeatBooking" DesignTimeRectangle="713, 608, 493, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT username'" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="ebddf20f-8b33-4a93-a1cd-f906cd09f28b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfEAAAAqCAYAAACjvGIlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO+SURBVHhe7dvPbhtFAAdgvwIXrn0G3oFTe2iL4IR6qgRXjiXXVkJcCKraFKTkljcgF0SR4BAJCXGpUCUi0QOHqLjxn7hWiUroMLO7Y6+NRYvjSEz9/aRPsXdn17n9PDPrThAREZEio8RFREQKzaTEHw9fAAAFyFHiAFCYHCUOAIXJUeIAUJgcJQ4AhclR4gBQmBwlDgCFyVHiAFCYHCUOAIXJUeIAUJgcJQ4AhclR4gBQmBwlDgCFyVHiAFCYnOVLfFRf0x8tOPdfjOv7HM0fBwAWylmuxFOBP9wNFztXw9bDMxR5KvBvboZO52bYi+8VOQC8XI4SB4DC5KysxI9O6nscDUPoxdeD8XR891kIo+p8c64ZWx1rXg+bc8dxbL5ufqk93SefO45ju81rAFgnOSsp8ditYW+j08yoD8MnnU64dr8u8lS8B7fjube/jeMG1bkbG7fi2Hjs4/3WTPwwfJqO3RmEp6ms52bp/echPNi+Wl+XXN4Nj+LnKnIA1k3OSkr8+/djqb73Y3Wun0r7bny/sR+exdly7/kgbF3uhA9iqT897YU7b8Vzb+yEB3Hs+DQVdSr0W1VRP7pXl/NBLOx+vHbvw+Y+1bhpoafP+fr69DNm/jcAeM3lnKnEL3XeCZeu1GU6ucek4JvCbb0+PumF2xc64cLOcWu2PS3x9heD0Wk/bMYZ92dxuj2Kpf5VLO2L24fT/6F1X3vpAKyTnDOWeCzwK7HIm+IdVA+4tWbf38Ub//DudFbelPibX/Tqve+5Eh/Gsq6W5e+dhD9/247Hvwy/xGODk9/DVvqykJfSJ6Z78gv/TwB4DeWsZDm93qveCb/+Ve9RV/vgzZJ6KuXr1f74y0v8KL4f3/8ofjHYDXvpnpv9asaeHpr7x0y8MVLgAKyZnJWU+DiMwudxZpxK9o+0R92eqU9my69Q4nEW/3i4H25U1+Vj8fOqcbN74vUXB8vpAKyfnJWUeHqYrS7ZVmGnJfW0BB5n1elBtW71E7In9RPom09aJT4t51TGadZdLanPPbTWjfeYeTq9+SwzcQDWTc5yJZ6kIo9/J/vRqZBb7ydlfLf5yVga8wq/Ba9exzH178qnx5L278QTe+EArKOc5Uv831TFnJbF88x8wRgAYCk5qy/xyRJ5a4980TgAYCk55zgTfzG7bA4ArETO+ZQ4AHBucpQ4ABQmR4kDQGFylDgAFCZHiQNAYXKUOAAUJkeJA0BhcmZKvDsKAMD/2MIS/+nnAwCgADmTEhcREZGyosRFRESKTAh/A23RK1zx0tlNAAAAAElFTkSuQmCC" InformativeScreenshot="56ec1de0ac1c789ddc0ac70104c16dce.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login using myLibrary username' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -213,7 +212,23 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="b5c268b8-a8aa-4791-aae5-c669bc850959" SecureText="[password]" Version="V3">
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[pass]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[SEAT_TO_ORDER.Rows(nxt).item("Password").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ss:SecureString">[password]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ss:SecureString">[new System.Net.NetworkCredential("",pass).SecurePassword]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="b5c268b8-a8aa-4791-aae5-c669bc850959" SecureText="[password]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://cassamv2.nlb.gov.sg/cas/login?service=https%3A%2F%2Fcassamv2.nlb.gov.sg%2Fcas%2Foauth2.0%2FcallbackAuthorize%3Fclient_name%3DCasOAuthClient%26client_id%3DFriHB2fqOlskzHOtKBorvlPTfgWGf4p3%26redirect_uri%3Dhttps%3A%2F%2Fwww.nlb.gov.sg%2Fseatbooking%2F&amp;applicationId=SeatBooking" DesignTimeRectangle="722, 641, 448, 38" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='form-control' aaname='' /&gt;" Guid="e178efa1-5859-4eb4-a39d-904ba7ebb2de" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAcQAAAAqCAYAAAAtZitZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGPSURBVHhe7dm9SiNhGIbhOa0VPAEb8QA8Ahs7f1oLbS20stxDsLO23Ea2EltFgqLxb3UJvj5OsiooW6UZ53rgIsxkvhRpbkKaMjMzsxJEMzOz7C2I59fPANAro53lqs3Fqq1FQQSgn07/JH5rP9oYCiIAvdUGcX1WEAHoN0EEgBBEAAhBBIAQRAAIQQSAEEQACEEEgBBEAAhBBIAQRAAIQQSAEEQACEEEgBBEAIgpBrHq8nF8bvjw7/z751zdjV8Hk/eGeXYweaa75wD4LqYUxMRiNKzd+aaapqm5vbO6b6NxWKu5fr23evBct3+rjvYW2utm/medjKquOn3uq+8CgC6aThDv8vzBxjggrY3az/23qEzCcvQhPK9WEp8un7uIL78PADrHL0S/EAEI/yFO7o1f/YcI0FdTDCIAdJcgAkAIIgCEIAJACCIAhCACQAgiAIQgAkAIIgCEIAJACCIAhCACQAgiAMR/gzi4KQDohfOnxG9t5nMQf/0+BoBeedxe+hxEMzOzPk8QzczMquoFbMdLUrwIjPwAAAAASUVORK5CYII=" InformativeScreenshot="54028361df9cfc4338344ca36cf6c8ef.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login using myLibrary username' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -230,7 +245,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NClick ClickType="Single" DisplayName="Click 'LOGIN'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5c268b8-a8aa-4791-aae5-c669bc850959" Version="V3">
+            <uix:NClick ClickType="Single" DisplayName="Click 'LOGIN'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5c268b8-a8aa-4791-aae5-c669bc850959" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://cassamv2.nlb.gov.sg/cas/login?service=https%3A%2F%2Fcassamv2.nlb.gov.sg%2Fcas%2Foauth2.0%2FcallbackAuthorize%3Fclient_name%3DCasOAuthClient%26client_id%3DFriHB2fqOlskzHOtKBorvlPTfgWGf4p3%26redirect_uri%3Dhttps%3A%2F%2Fwww.nlb.gov.sg%2Fseatbooking%2F&amp;applicationId=SeatBooking" DesignTimeRectangle="713, 825, 493, 48" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'LOGIN'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='btn btn-block btn-lg btn-primary' aaname='LOGIN' check:text='LOGIN' /&gt;" Guid="216a9b07-60d1-4804-b96f-66487daeb1e2" ImageBase64="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" InformativeScreenshot="3689f0a9ebf0c7b84cb3117838f9d2d7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login using myLibrary username' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -241,8 +256,8 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.nlb.gov.sg/seatbooking/" Version="V3" />
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.nlb.gov.sg/seatbooking/" Version="V3" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

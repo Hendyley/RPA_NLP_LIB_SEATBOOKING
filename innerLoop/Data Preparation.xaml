@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1114.4,1923.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,1919</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Data_Preparation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -128,7 +128,7 @@
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Data_Preparation" sap:VirtualizedContainerService.HintSize="635.2,1858.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Data_Preparation" sap:VirtualizedContainerService.HintSize="635,1854" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Object" Name="LibCollect" />
       <Variable x:TypeArguments="sd:DataTable" Name="LIST_LIB_DT" />
@@ -141,14 +141,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="572.8,24.8" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3Lfk2Pka8kKeLLD4IlydjwAAAAACAAAAAAAQZgAAAAEAACAAAABmY6r0JcJAucuRGR96nUL0kf+tTw2CgjTqpv+1GV+OBwAAAAAOgAAAAAIAACAAAAArsm8NkG+7U9LKV9r9I92CNQigiYsPF6xT0IROEcAa1BAAAAD/+oZ9Vxv/L+rTSFxcW5LOQAAAACmfG4Y7ktG1W5QYOme/rOo4bxWnYoSR/ZayPzPmWHmaxP7zsPxIoWDoJi5kd4HXvgf+hkT6Qd8CngjNbNgsuTI=" Result="[passw]" />
-    <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="572.8,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.OleDb" ConnectionString="[&quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Project\RPA\RPA_NLP_LIB_SEATBOOKING\Data\NLB_DB.accdb;Jet OLEDB:Database Password=&quot;+passw+&quot;&quot;]" DatabaseConnection="[conn]" />
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[LIBDATA]" DisplayName="Run query" ExistingDbConnection="[conn]" sap:VirtualizedContainerService.HintSize="572.8,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="&#xA;SELECT [No]&#xA;      ,[Library]&#xA;      ,[Area]&#xA;      ,[Seat]&#xA;      ,[Tableid]&#xA;      ,[Group]&#xA;      ,[Total_Seat_Lib]&#xA;      ,[Total_Seat_Area]&#xA;      ,[Total_Seat_Table]&#xA;  FROM NLB_Data">
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="573,25" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoWmkz0MZeE21QAavmfURNQAAAAACAAAAAAAQZgAAAAEAACAAAAB1UAwGVK8Rr3Fqar3A7eKgEBdaUysGZsORNmnyuDNxYQAAAAAOgAAAAAIAACAAAAAaOuKIWLwy9uL8zwXM/qA61aqia1CiZASIvfy3XjwmUhAAAACwh4b9RMacpixmao7lSC3sQAAAAA4bIrZOZKXrDayiVdkzD7164ZtJu1nkvo2E0nArJloFTJeRHsTc7QajHWv8dzATfqDjskwxWhyuQrRFepZBG10=" Result="[passw]" />
+    <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="573,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.OleDb" ConnectionString="[&quot;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\Data\NLB_DB.accdb;Jet OLEDB:Database Password=&quot;+passw+&quot;&quot;]" DatabaseConnection="[conn]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[LIBDATA]" DisplayName="Run query" ExistingDbConnection="[conn]" sap:VirtualizedContainerService.HintSize="573,89" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="&#xA;SELECT [No]&#xA;      ,[Library]&#xA;      ,[Area]&#xA;      ,[Seat]&#xA;      ,[Tableid]&#xA;      ,[Group]&#xA;      ,[Total_Seat_Lib]&#xA;      ,[Total_Seat_Area]&#xA;      ,[Total_Seat_Table]&#xA;  FROM NLB_Data">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
     </ui:ExecuteQuery>
-    <Assign DisplayName="Get Certain column from Lib" sap:VirtualizedContainerService.HintSize="572.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Get Certain column from Lib" sap:VirtualizedContainerService.HintSize="573,81" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[LibList]</OutArgument>
       </Assign.To>
@@ -156,9 +156,9 @@
         <InArgument x:TypeArguments="sd:DataTable">[New DataView(LIBDATA).ToTable(False,New List(Of String)({"Library","Area","Total_Seat_Lib"}).ToArray)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:RemoveDuplicateRows DataTable="[LibList]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="572.8,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[LibList]" />
-    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Lib" DataTable="[LibList]" DisplayName="Sort Data largest to smallest library" sap:VirtualizedContainerService.HintSize="572.8,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[LibList]" SortOrder="Descending" />
-    <Assign sap:VirtualizedContainerService.HintSize="572.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <ui:RemoveDuplicateRows DataTable="[LibList]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="573,80" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[LibList]" />
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total_Seat_Lib" DataTable="[LibList]" DisplayName="Sort Data largest to smallest library" sap:VirtualizedContainerService.HintSize="573,80" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[LibList]" SortOrder="Descending" />
+    <Assign sap:VirtualizedContainerService.HintSize="573,81" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[LibCollect]</OutArgument>
       </Assign.To>

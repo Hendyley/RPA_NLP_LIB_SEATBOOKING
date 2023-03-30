@@ -11,11 +11,12 @@
     <x:Property Name="form_startslots" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="form_endslots" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="selected_users_dt" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="grp_id" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1461,4481</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,4433</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Form_Interface_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -119,7 +120,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Form_Interface" sap:VirtualizedContainerService.HintSize="594,4416" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Form_Interface" sap:VirtualizedContainerService.HintSize="650,4368" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="form_liblist" />
       <Variable x:TypeArguments="njl:JObject" Name="form_obj_out" />
@@ -131,13 +132,15 @@
       <Variable x:TypeArguments="scg:List(x:String)" Name="form_userlist" />
       <Variable x:TypeArguments="x:String" Name="test" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="selected_users_list" />
+      <Variable x:TypeArguments="x:String" Name="form_str1_out" />
+      <Variable x:TypeArguments="sd:DataTable" Name="GrpUsers_DT" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="532,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="588,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -167,69 +170,84 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[credential_table]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="532,368" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-      <ui:ForEachRow.Body>
-        <ActivityAction x:TypeArguments="sd:DataRow">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[form_userlist]" DisplayName="Append item to collection" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_4" Result="[form_userlist]">
-              <uasc:AppendItemToCollection.Items>
-                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">[CurrentRow.Item("nlb_id").ToString()]</InArgument>
-                </scg:List>
-              </uasc:AppendItemToCollection.Items>
-            </uasc:AppendItemToCollection>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEachRow.Body>
-    </ui:ForEachRow>
-    <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="54849de6-22ff-4a1b-b884-e8be6b83928b" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" DisplayName="Create Form" EnableAccessibility="False" FormFieldsOutputData="[form_str_out]" FormHeight="400" FormSchema="%[{&quot;title&quot;:&quot;NLB Library Mass Booking Form&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;nlbLibraryMassBookingForm&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Panel&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[]},{&quot;label&quot;:&quot;Select User&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;uniqueOptions&quot;:true,&quot;tableView&quot;:true,&quot;multiple&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;userlist&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Select Library&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;tableView&quot;:true,&quot;multiple&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;liblist&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Put other libraries other than the selected ones into consideration &quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;check_avail&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true},{&quot;title&quot;:&quot;Indicate your booking time&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;indicateYourBookingTime&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Panel&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;condensed&quot;:true,&quot;key&quot;:&quot;table1&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:2,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Starting Time&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;start&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Select your duration&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;0:30&quot;,&quot;value&quot;:&quot;030&quot;},{&quot;label&quot;:&quot;0:45&quot;,&quot;value&quot;:&quot;045&quot;},{&quot;label&quot;:&quot;1:00&quot;,&quot;value&quot;:&quot;100&quot;},{&quot;label&quot;:&quot;1:15&quot;,&quot;value&quot;:&quot;115&quot;},{&quot;label&quot;:&quot;1:30&quot;,&quot;value&quot;:&quot;130&quot;},{&quot;label&quot;:&quot;1:45&quot;,&quot;value&quot;:&quot;145&quot;},{&quot;label&quot;:&quot;2:00&quot;,&quot;value&quot;:&quot;200&quot;},{&quot;label&quot;:&quot;2:15&quot;,&quot;value&quot;:&quot;215&quot;},{&quot;label&quot;:&quot;2:30&quot;,&quot;value&quot;:&quot;230&quot;},{&quot;label&quot;:&quot;2:45&quot;,&quot;value&quot;:&quot;245&quot;},{&quot;label&quot;:&quot;3:00&quot;,&quot;value&quot;:&quot;300&quot;},{&quot;label&quot;:&quot;3:15&quot;,&quot;value&quot;:&quot;315&quot;},{&quot;label&quot;:&quot;3:30&quot;,&quot;value&quot;:&quot;330&quot;},{&quot;label&quot;:&quot;3:45&quot;,&quot;value&quot;:&quot;345&quot;},{&quot;label&quot;:&quot;4:00&quot;,&quot;value&quot;:&quot;400&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;time_field&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true}]}]]}]},{&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Reset&quot;,&quot;action&quot;:&quot;reset&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;reset&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:4,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;offset&quot;:4},{&quot;components&quot;:[{&quot;label&quot;:&quot;Submit&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:4,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;offset&quot;:0}],&quot;key&quot;:&quot;columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;./assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;./assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;./assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="532,230" sap2010:WorkflowViewState.IdRef="FormActivity_2" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="True" StartAsMinimized="False">
+    <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="069fab52-49ff-4fb0-9a72-221e5709bd12" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" DisplayName="Create Form" EnableAccessibility="False" FormFieldsOutputData="[form_str1_out]" FormHeight="400" FormSchema="%[{&quot;title&quot;:&quot;Main Page&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;panel&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Panel&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Enter your group id&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;grpID&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]},{&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Register&quot;,&quot;action&quot;:&quot;custom&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit1&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false,&quot;isResetData&quot;:false,&quot;showUpdateData&quot;:false,&quot;allowMultipleClicksWhileDoBlock&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;},{&quot;components&quot;:[{&quot;label&quot;:&quot;Next&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit2&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false,&quot;isResetData&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;}],&quot;key&quot;:&quot;columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;./assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;./assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;./assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="588,965" sap2010:WorkflowViewState.IdRef="FormActivity_3" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="True" StartAsMinimized="False">
       <ufa:FormActivity.Body>
         <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="550,838" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="488,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[form_obj_out]" JsonString="[form_str1_out]" />
+            <Assign sap:VirtualizedContainerService.HintSize="488,82" sap2010:WorkflowViewState.IdRef="Assign_15">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[grp_id]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[form_obj_out("grpID").ToString()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get_Users.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="488,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="outerLoop\Get_Users.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InOutArgument x:TypeArguments="x:String" x:Key="grp_id">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="grp_id" />
+                </InOutArgument>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="GRPDATA">
+                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="GrpUsers_DT" />
+                </InOutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Assign sap:VirtualizedContainerService.HintSize="488,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:List(x:String)">[form_userlist]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:List(x:String)">[( From row in GrpUsers_DT.AsEnumerable() Select Convert.Tostring(row("NLB_ID")) ).ToList()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="54849de6-22ff-4a1b-b884-e8be6b83928b" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" DisplayName="Create Form" EnableAccessibility="False" FormFieldsOutputData="[form_str_out]" FormHeight="400" FormSchema="%[{&quot;title&quot;:&quot;NLB Library Mass Booking Form&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;nlbLibraryMassBookingForm&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Panel&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[]},{&quot;label&quot;:&quot;Select User&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;uniqueOptions&quot;:true,&quot;tableView&quot;:true,&quot;multiple&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;userlist&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Select Library&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;tableView&quot;:true,&quot;multiple&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;liblist&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true},{&quot;label&quot;:&quot;Put other libraries other than the selected ones into consideration &quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;check_avail&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true},{&quot;title&quot;:&quot;Indicate your booking time&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;indicateYourBookingTime&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Panel&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;condensed&quot;:true,&quot;key&quot;:&quot;table1&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:2,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Starting Time&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;start&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Select your duration&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;0:30&quot;,&quot;value&quot;:&quot;030&quot;},{&quot;label&quot;:&quot;0:45&quot;,&quot;value&quot;:&quot;045&quot;},{&quot;label&quot;:&quot;1:00&quot;,&quot;value&quot;:&quot;100&quot;},{&quot;label&quot;:&quot;1:15&quot;,&quot;value&quot;:&quot;115&quot;},{&quot;label&quot;:&quot;1:30&quot;,&quot;value&quot;:&quot;130&quot;},{&quot;label&quot;:&quot;1:45&quot;,&quot;value&quot;:&quot;145&quot;},{&quot;label&quot;:&quot;2:00&quot;,&quot;value&quot;:&quot;200&quot;},{&quot;label&quot;:&quot;2:15&quot;,&quot;value&quot;:&quot;215&quot;},{&quot;label&quot;:&quot;2:30&quot;,&quot;value&quot;:&quot;230&quot;},{&quot;label&quot;:&quot;2:45&quot;,&quot;value&quot;:&quot;245&quot;},{&quot;label&quot;:&quot;3:00&quot;,&quot;value&quot;:&quot;300&quot;},{&quot;label&quot;:&quot;3:15&quot;,&quot;value&quot;:&quot;315&quot;},{&quot;label&quot;:&quot;3:30&quot;,&quot;value&quot;:&quot;330&quot;},{&quot;label&quot;:&quot;3:45&quot;,&quot;value&quot;:&quot;345&quot;},{&quot;label&quot;:&quot;4:00&quot;,&quot;value&quot;:&quot;400&quot;}]},&quot;validate&quot;:{&quot;onlyAvailableItems&quot;:false},&quot;key&quot;:&quot;time_field&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true}]}]]}]},{&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Reset&quot;,&quot;action&quot;:&quot;reset&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;reset&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:4,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;offset&quot;:4},{&quot;components&quot;:[{&quot;label&quot;:&quot;Submit&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:4,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;offset&quot;:0}],&quot;key&quot;:&quot;columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;./assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;./assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;./assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="488,230" sap2010:WorkflowViewState.IdRef="FormActivity_2" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="True" StartAsMinimized="False">
+              <ufa:FormActivity.Body>
+                <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </ufa:FormActivity.Body>
+              <ufa:FormActivity.DelayBody>
+                <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                  <Delay Duration="00:00:00.2500000" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                </ActivityAction>
+              </ufa:FormActivity.DelayBody>
+              <ufa:FormActivity.FormFieldsCollection>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="userlist_dropdown">[form_userlist]</InOutArgument>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="liblist_dropdown">[form_liblist]</InOutArgument>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="start_dropdown">[form_startslots]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:Boolean" x:Key="check_avail">[C_AVAIL]</InOutArgument>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="end_dropdown">[form_endslots]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="time_field">[Duration]</InOutArgument>
+              </ufa:FormActivity.FormFieldsCollection>
+            </ufa:FormActivity>
           </Sequence>
         </ActivityAction>
       </ufa:FormActivity.Body>
       <ufa:FormActivity.DelayBody>
         <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
-          <Delay Duration="00:00:00.2500000" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+          <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_3" />
         </ActivityAction>
       </ufa:FormActivity.DelayBody>
       <ufa:FormActivity.FormFieldsCollection>
-        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="userlist_dropdown">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="form_userlist" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="liblist_dropdown">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="form_liblist" />
-        </InOutArgument>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="start_dropdown">
           <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="form_startslots" />
         </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Boolean" x:Key="check_avail">
-          <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="C_AVAIL" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="end_dropdown">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="form_endslots" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="time_field">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Duration" />
-        </InOutArgument>
       </ufa:FormActivity.FormFieldsCollection>
     </ufa:FormActivity>
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[form_obj_out]" JsonString="[form_str_out]" />
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="588,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[form_obj_out]" JsonString="[form_str_out]" />
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Duration]</OutArgument>
       </Assign.To>
@@ -237,7 +255,7 @@
         <InArgument x:TypeArguments="x:String">[form_obj_out("time_field").ToString()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_14">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Duration]</OutArgument>
       </Assign.To>
@@ -245,7 +263,7 @@
         <InArgument x:TypeArguments="x:String">[Duration.Insert(1,":")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Start_time]</OutArgument>
       </Assign.To>
@@ -253,7 +271,7 @@
         <InArgument x:TypeArguments="x:String">[LCase(form_obj_out("start").ToString())]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[Total]</OutArgument>
       </Assign.To>
@@ -261,8 +279,8 @@
         <InArgument x:TypeArguments="x:Int32">[form_obj_out("userlist").Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BuildDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;User&quot; msdata:Caption=&quot;&quot; default=&quot;_&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Seat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Time_Left&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Library&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Area&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Done&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[i&lt;Total]" DisplayName="While" sap:VirtualizedContainerService.HintSize="532,1000" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:BuildDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="588,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Seat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Time_Left&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Library&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Area&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; default=&quot;_&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Done&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[i&lt;Total]" DisplayName="While" sap:VirtualizedContainerService.HintSize="588,1000" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,834" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <Sequence.Variables>
@@ -330,7 +348,7 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
-    <ui:JoinDataTables DataTable1="[SEAT_TO_ORDER]" DataTable2="[credential_table]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="532,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[SEAT_TO_ORDER]">
+    <ui:JoinDataTables DataTable1="[SEAT_TO_ORDER]" DataTable2="[GrpUsers_DT]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="588,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[SEAT_TO_ORDER]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -338,20 +356,20 @@
               <InArgument x:TypeArguments="x:String">["User"]</InArgument>
             </ui:JoinOperationArgument.Column1>
             <ui:JoinOperationArgument.Column2>
-              <InArgument x:TypeArguments="x:String">["nlb_id"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["NLB_ID"]</InArgument>
             </ui:JoinOperationArgument.Column2>
           </ui:JoinOperationArgument>
         </scg:List>
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
-    <ui:FilterDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="532,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[SEAT_TO_ORDER]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[SEAT_TO_ORDER]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="588,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[SEAT_TO_ORDER]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
         </scg:List>
       </ui:FilterDataTable.Filters>
       <ui:FilterDataTable.SelectColumns>
-        <scg:List x:TypeArguments="InArgument" Capacity="8">
+        <scg:List x:TypeArguments="InArgument" Capacity="16">
           <InArgument x:TypeArguments="x:String">["User"]</InArgument>
           <InArgument x:TypeArguments="x:String">["Seat"]</InArgument>
           <InArgument x:TypeArguments="x:String">["Time_Left"]</InArgument>
@@ -359,11 +377,12 @@
           <InArgument x:TypeArguments="x:String">["Area"]</InArgument>
           <InArgument x:TypeArguments="x:String">["Done"]</InArgument>
           <InArgument x:TypeArguments="x:String">["tele_id"]</InArgument>
-          <InArgument x:TypeArguments="x:String">["asset_id"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Group"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Password"]</InArgument>
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[num_libs]</OutArgument>
       </Assign.To>
@@ -371,7 +390,7 @@
         <InArgument x:TypeArguments="x:Int32">[form_obj_out("liblist").Count()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
       </Assign.To>
@@ -379,7 +398,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[selectliblist]</OutArgument>
       </Assign.To>
@@ -387,7 +406,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[i &lt; num_libs]" DisplayName="While" sap:VirtualizedContainerService.HintSize="532,532" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[i &lt; num_libs]" DisplayName="While" sap:VirtualizedContainerService.HintSize="588,532" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,366" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
@@ -407,7 +426,7 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
-    <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[SelectLib]</OutArgument>
       </Assign.To>
@@ -415,17 +434,5 @@
         <InArgument x:TypeArguments="s:String[]">[selectliblist.ToArray()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="532,83" sap2010:WorkflowViewState.IdRef="Assign_13">
-      <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[selected_users_dt]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From d In credential_table.AsEnumerable
-Where selected_users_list.Contains(d("nlb_id").toString.Trim)
-Select r=d).CopyToDataTable]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:OutputDataTable DataTable="[selected_users_dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="532,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[test]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[duration]" />
   </Sequence>
 </Activity>
