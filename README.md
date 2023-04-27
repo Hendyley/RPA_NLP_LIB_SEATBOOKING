@@ -6,7 +6,7 @@ Tool:
 - Python
 
 Documentation:
-NewBie_submission.zip :
+Check NewBie folder :
 - Video
 - PPT Slide
 - Documentation
